@@ -45,4 +45,4 @@ jobs:
       - name: Restart EC2 Instance
         run: |
           INSTANCE_ID="i-0a3861bb6dd8db812" 
-          aws ec2 reboot-instances --instance-ids $INSTANCE_ID  
+          aws ec2 stop-instances --instance-ids $INSTANCE_ID  
