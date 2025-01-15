@@ -34,3 +34,15 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      - name: ECS Restart Service
+        # You may pin to the exact commit or the version.
+        # uses: apideck-libraries/ecs-restart-service@92e6df53958b852f5f24db546edf4a00d4cc59a6
+        uses: apideck-libraries/ecs-restart-service@v1
+        with:
+          # The name of the service to update.
+          service: arn:aws:ec2:ap-southeast-2:440744224046:instance/i-0a3861bb6dd8db812
+          # The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not specify a cluster, the default cluster is assumed.
+          #cluster:
+          # Determines whether to force a new deployment of the service. You can use this option to start a new deployment with no service definition changes. For example, you can update a service's tasks to use a newer Docker image with the same image/tag combination (my_image:latest ) or to roll Fargate tasks onto a newer platform version.
+          #force-new-deployment:
+                
