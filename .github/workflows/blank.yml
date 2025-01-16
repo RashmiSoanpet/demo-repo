@@ -41,9 +41,9 @@ jobs:
           #aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           #aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           role-to-assume: arn:aws:iam::440744224046:role/ec2_git
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
           #${{ secrets.AWS_ROLE_ARN }}
-          aws-region: ap-southeast-2
-          #${{ secrets.AWS_REGION }}
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Restart EC2 Instance
         run: |
